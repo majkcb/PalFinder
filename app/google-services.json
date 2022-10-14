@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716004954022",
+    "project_id": "palfinderprojekt",
+    "storage_bucket": "palfinderprojekt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716004954022:android:3060bc2772cddb29f7c967",
+        "android_client_info": {
+          "package_name": "com.example.palfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716004954022-c50trlok63296v6ao4b7blrrtem97nu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrbregiB-9df9fYTrQtyzy8fDpvjsoJJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716004954022-c50trlok63296v6ao4b7blrrtem97nu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
