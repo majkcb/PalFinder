@@ -14,8 +14,8 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var db: FirebaseFirestore //databasen
-    lateinit var auth : FirebaseAuth //authentication
+    lateinit var db: FirebaseFirestore //Databasen
+    lateinit var auth : FirebaseAuth //Authentication
     lateinit var emailView : EditText
     lateinit var passwordView : EditText
 
@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         db = Firebase.firestore //kom åt databasen
 
-        //nedan är koden för hur vi skapar testanvändare i appen
-        //detta uppdateras i authentication i firestore
+        /* Nedan är koden för hur vi skapar testanvändare i appen
+        detta uppdateras i authentication i firestore. */
 
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
@@ -87,10 +87,6 @@ class MainActivity : AppCompatActivity() {
                     Log.d("!!!", "User not created ${task.exception}")
                 }
             }
-
-        //Jonas first commit
-
-        //JonasS_4
 
     }
 }
