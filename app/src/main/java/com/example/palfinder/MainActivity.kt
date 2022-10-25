@@ -67,12 +67,12 @@ class MainActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.loginFacebook)
         callbackManager = CallbackManager.Factory.create()
 
-        FbLogIn()
+        fbLogIn()
 
 
     }
 
-    private fun FbLogIn() {
+    private fun fbLogIn() {
         loginButton.setPermissions(listOf("email"))
 
         loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
