@@ -6,7 +6,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -21,12 +20,6 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
-NewLayout
-    lateinit var db: FirebaseFirestore //Databasen
-    lateinit var auth : FirebaseAuth //Authentication
-    lateinit var emailView : EditText
-    lateinit var passwordView : EditText
-
     lateinit var db: FirebaseFirestore //databasen
     lateinit var auth: FirebaseAuth //authentication
     lateinit var emailView: EditText
@@ -34,21 +27,16 @@ NewLayout
     lateinit var loginButton : LoginButton
     var callbackManager = CallbackManager.Factory.create()
 
-
- main
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         db = Firebase.firestore //kom åt databasen
 
- NewLayout
         /* Nedan är koden för hur vi skapar testanvändare i appen
         detta uppdateras i authentication i firestore. */
 
 
- main
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
 
@@ -156,8 +144,6 @@ NewLayout
             }
 
 
-
- main
     }
 
 }
