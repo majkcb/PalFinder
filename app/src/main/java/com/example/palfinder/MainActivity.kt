@@ -21,6 +21,12 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
+NewLayout
+    lateinit var db: FirebaseFirestore //Databasen
+    lateinit var auth : FirebaseAuth //Authentication
+    lateinit var emailView : EditText
+    lateinit var passwordView : EditText
+
     lateinit var db: FirebaseFirestore //databasen
     lateinit var auth: FirebaseAuth //authentication
     lateinit var emailView: EditText
@@ -29,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     var callbackManager = CallbackManager.Factory.create()
 
 
+ main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +43,12 @@ class MainActivity : AppCompatActivity() {
 
         db = Firebase.firestore //kom åt databasen
 
+ NewLayout
+        /* Nedan är koden för hur vi skapar testanvändare i appen
+        detta uppdateras i authentication i firestore. */
+
+
+ main
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
 
@@ -142,11 +155,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-        //Jonas first commit
-
-        //JonasS_4
 
 
+ main
     }
 
 }
