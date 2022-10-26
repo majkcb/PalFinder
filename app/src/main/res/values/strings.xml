@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">PalFinder</string>
     <string name="facebook_app_id">1252090275359242</string>
     <string name="fb_login_protocol_scheme">fb1252090275359242</string>

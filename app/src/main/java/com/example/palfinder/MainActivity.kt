@@ -3,6 +3,7 @@ package com.example.palfinder
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -31,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         db = Firebase.firestore //kom åt databasen
 
         /* Nedan är koden för hur vi skapar testanvändare i appen
         detta uppdateras i authentication i firestore. */
-
 
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
@@ -90,9 +91,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSuccess(result: LoginResult?) {
-
                 Log.d("!!!", "Login Success")
-
             }
         })
     }
@@ -112,8 +111,10 @@ class MainActivity : AppCompatActivity() {
                     Log.d(
                         "!!!",
                         "Sign in successful"
-                    ) //Gå till ny aktivitet - typ editera profil?
-
+                    ) //Gå till ny aktivitet - "typ editera profil?"
+                    val intent = Intent(this, MenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Log.d("!!!", "Sign in failed ${task.exception}")
                 }
