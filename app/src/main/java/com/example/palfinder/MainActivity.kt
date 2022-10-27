@@ -3,6 +3,7 @@ package com.example.palfinder
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         db = Firebase.firestore //kom åt databasen
 
@@ -74,12 +76,12 @@ class MainActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.loginFacebook)
         callbackManager = CallbackManager.Factory.create()
 
-        FbLogIn()
+        fbLogIn()
 
 
     }
 
-    private fun FbLogIn() {
+    private fun fbLogIn() {
         loginButton.setPermissions(listOf("email"))
 
         loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
@@ -97,9 +99,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSuccess(result: LoginResult?) {
-
                 Log.d("!!!", "Login Success")
-
             }
         })
     }
@@ -119,8 +119,10 @@ class MainActivity : AppCompatActivity() {
                     Log.d(
                         "!!!",
                         "Sign in successful"
-                    ) //Gå till ny aktivitet - typ editera profil?
-
+                    ) //Gå till ny aktivitet - "typ editera profil?"
+                    val intent = Intent(this, MenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Log.d("!!!", "Sign in failed ${task.exception}")
                 }
