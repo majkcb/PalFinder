@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var loginButton : LoginButton
     var callbackManager = CallbackManager.Factory.create()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         /* Nedan är koden för hur vi skapar testanvändare i appen
         detta uppdateras i authentication i firestore. */
 
+        val mapButton = findViewById<Button>(R.id.mapView)
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
 
@@ -46,6 +48,12 @@ class MainActivity : AppCompatActivity() {
         //signa upp och in med email och lösenord nedan
 
         val signUpButton = findViewById<Button>(R.id.signUpButton)
+
+        mapButton.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
+
+        }
 
         signUpButton.setOnClickListener {
             signUp()
