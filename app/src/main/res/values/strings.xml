@@ -3,6 +3,7 @@
     <string name="facebook_app_id">1252090275359242</string>
     <string name="fb_login_protocol_scheme">fb1252090275359242</string>
     <string name="facebook_client_token">55a81f1bece3ffbb9043b1f41a47076f</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 
 </resources>
