@@ -35,7 +35,7 @@ class FollowsDetailViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_follows_detail_view, container, false)
+        return inflater.inflate(R.layout.fragment_follows_recycler_view, container, false)
     }
 
     companion object {
