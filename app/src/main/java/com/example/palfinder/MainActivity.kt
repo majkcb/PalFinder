@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -46,18 +45,16 @@ class MainActivity : AppCompatActivity() {
     val RC_SIGN_IN = 100
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         db = Firebase.firestore //kom åt databasen
 
         /* Nedan är koden för hur vi skapar testanvändare i appen
         detta uppdateras i authentication i firestore. */
 
-        val mapButton = findViewById<Button>(R.id.mapView)
+
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
 
@@ -66,12 +63,6 @@ class MainActivity : AppCompatActivity() {
         //signa upp och in med email och lösenord nedan
 
         val signUpButton = findViewById<Button>(R.id.signUpButton)
-
-        mapButton.setOnClickListener {
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
-
-        }
 
         signUpButton.setOnClickListener {
             signUp()
@@ -139,7 +130,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d("!!!", "${account.email} is logged in")
             }
 
-
         } else {
             Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT).show()
         }
@@ -151,14 +141,13 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 Log.d("!!!", "Google Login Successful")
+                val intent = Intent(this, MenuActivity::class.java)
+                startActivity(intent)
+                finish()
 
 
             } else {
                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-
-            override fun onSuccess(result: LoginResult?) {
-                Log.d("!!!", "Login Success")
-
             }
         }
 
@@ -166,11 +155,39 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun fbLogIn() {
-            loginButton.setPermissions(listOf("email"))
+        loginButton.setPermissions(listOf("email"))
 
-            loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
-                @JvmName("onSuccess1")
-                fun onSuccess(loginResult: LoginResult) {
+        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
+            @JvmName("onSuccess1")
+            fun onSuccess(loginResult: LoginResult) {
+
+            }
+
+            override fun onCancel() {
+                // App code
+            }
+
+            override fun onError(exception: FacebookException) {
+                // App code
+            }
+
+            override fun onSuccess(result: LoginResult?) {
+
+                Log.d("!!!", "Login Success")
+
+                
+            }
+        })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        callbackManager.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    fun signIn() {
+        val email = emailView.text.toString()
+        val password = passwordView.text.toString()
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
@@ -178,78 +195,41 @@ class MainActivity : AppCompatActivity() {
                     Log.d(
                         "!!!",
                         "Sign in successful"
-                    ) //Gå till ny aktivitet - "typ editera profil?"
+                    ) //Gå till ny aktivitet - typ editera profil?
+
+                } else {
+                    Log.d("!!!", "Sign in failed ${task.exception}")
+                }
+            }
+    }
+
+    fun signUp() {
+
+        val email = emailView.text.toString()
+        val password = passwordView.text.toString()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            return
+
+        }
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d(
+                        "!!!",
+                        "User creation success"
+                    ) //Gå till ny aktivitet - typ editera profil?
                     val intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)
                     finish()
+
                 } else {
-                    Log.d("!!!", "Sign in failed ${task.exception}")
-                    
+                    Log.d("!!!", "User not created ${task.exception}")
                 }
-
-                override fun onCancel() {
-                    // App code
-                }
-
-                override fun onError(exception: FacebookException) {
-                    // App code
-                }
-
-                override fun onSuccess(result: LoginResult?) {
-
-                    Log.d("!!!", "Login Success")
-
-                }
-            })
-        }
-
-        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            callbackManager.onActivityResult(requestCode, resultCode, data)
-            super.onActivityResult(requestCode, resultCode, data)
-        }
-
-        fun signIn() {
-            val email = emailView.text.toString()
-            val password = passwordView.text.toString()
-
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Log.d(
-                            "!!!",
-                            "Sign in successful"
-                        ) //Gå till ny aktivitet - typ editera profil?
-
-                    } else {
-                        Log.d("!!!", "Sign in failed ${task.exception}")
-                    }
-                }
-        }
-
-        fun signUp() {
-
-            val email = emailView.text.toString()
-            val password = passwordView.text.toString()
-
-            if (email.isEmpty() || password.isEmpty()) {
-                return
-
             }
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Log.d(
-                            "!!!",
-                            "User creation success"
-                        ) //Gå till ny aktivitet - typ editera profil?
-
-                    } else {
-                        Log.d("!!!", "User not created ${task.exception}")
-                    }
-                }
-
-        }
+    }
 
 
 
