@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "716004954022-5tvqdi94q3v6aopv9gl5sg4kdj7dc7oe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.palfinder",
+            "certificate_hash": "19772d1c74590815316c67cea2c33ddc53e3061a"
+          }
+        },
+        {
           "client_id": "716004954022-c50trlok63296v6ao4b7blrrtem97nu6.apps.googleusercontent.com",
           "client_type": 3
         }
