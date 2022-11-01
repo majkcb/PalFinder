@@ -7,9 +7,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.CallbackManager
@@ -196,6 +193,9 @@ class MainActivity : AppCompatActivity() {
                         "!!!",
                         "Sign in successful"
                     ) //Gå till ny aktivitet - typ editera profil?
+                    val intent = Intent(this, MenuActivity::class.java)
+                    startActivity(intent)
+                    finish()
 
                 } else {
                     Log.d("!!!", "Sign in failed ${task.exception}")
