@@ -14,9 +14,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MenuActivity : AppCompatActivity() {
 
     // Input for all fragments
+
+    //Settings, not necessary for now.
     private val AboutPalfinderFragments = AboutPalfinderFragments()
+    //Profile, edit and what shows.
     private val PersonProfileEditFragment = PersonProfileEditFragment()
+    //Map-fragment, map of you and friends.
     private val FollowersMapViewFragment = FollowersMapViewFragment()
+    //List of friends, followers and those you follow.
     private val FollowsRecycleViewFragment = FollowsRecycleViewFragment()
 
 
@@ -36,10 +41,15 @@ class MenuActivity : AppCompatActivity() {
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
+
                 R.id.map -> replaceFragment(FollowersMapViewFragment)
+
                 R.id.profile -> replaceFragment(PersonProfileEditFragment)
+
                 R.id.friendList -> replaceFragment(FollowsRecycleViewFragment)
+
                 R.id.setting -> replaceFragment(AboutPalfinderFragments)
+
             }
             true
         }
