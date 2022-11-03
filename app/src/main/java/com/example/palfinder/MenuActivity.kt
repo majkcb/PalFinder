@@ -1,8 +1,6 @@
 package com.example.palfinder
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.palfinder.Fragments.AboutPalfinderFragment
@@ -29,12 +27,6 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_layout)
 
-        //Test RV_button down here
-        val followersButton = findViewById<Button>(R.id.followersButton)
-        followersButton.setOnClickListener {
-            val intent = Intent(this, FollowersActivity::class.java)
-            startActivity(intent)
-        }
 
         replaceFragment(MapViewFragment)
 
