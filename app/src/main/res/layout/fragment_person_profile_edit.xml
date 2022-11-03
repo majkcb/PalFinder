@@ -8,7 +8,7 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.FollowersMapViewFragment"
+    tools:context=".Fragments.MapViewFragment"
     android:fillViewport="true"
 
     app:layout_constraintTop_toBottomOf="@id/tv_head">
