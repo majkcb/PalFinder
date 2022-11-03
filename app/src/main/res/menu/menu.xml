@@ -17,6 +17,11 @@
         android:title="Friend List"/>
 
     <item
+        android:id="@+id/follower"
+        android:icon="@drawable/followers_button"
+        android:title="Followers List"/>
+
+    <item
         android:id="@+id/setting"
         android:icon="@drawable/setting_button"
         android:title="Setting"/>

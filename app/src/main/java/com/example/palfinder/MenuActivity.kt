@@ -3,10 +3,7 @@ package com.example.palfinder
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.palfinder.Fragments.AboutPalfinderFragment
-import com.example.palfinder.Fragments.FollowsRecycleViewFragment
-import com.example.palfinder.Fragments.MapViewFragment
-import com.example.palfinder.Fragments.PersonProfileEditFragment
+import com.example.palfinder.Fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MenuActivity : AppCompatActivity() {
@@ -21,6 +18,7 @@ class MenuActivity : AppCompatActivity() {
     private val MapViewFragment = MapViewFragment()
     //List of friends, followers and those you follow.
     private val FollowsRecycleViewFragment = FollowsRecycleViewFragment()
+    private val FollowersRecycleViewFragment = FollowersRecycleViewFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +37,8 @@ class MenuActivity : AppCompatActivity() {
                 R.id.profile -> replaceFragment(PersonProfileEditFragment)
 
                 R.id.friendList -> replaceFragment(FollowsRecycleViewFragment)
+
+                R.id.follower -> replaceFragment(FollowersRecycleViewFragment)
 
                 R.id.setting -> replaceFragment(AboutPalfinderFragment)
 
