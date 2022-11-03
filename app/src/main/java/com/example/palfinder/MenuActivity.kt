@@ -6,8 +6,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.palfinder.Fragments.AboutPalfinderFragment
-import com.example.palfinder.Fragments.FollowersMapViewFragment
 import com.example.palfinder.Fragments.FollowsRecycleViewFragment
+import com.example.palfinder.Fragments.MapViewFragment
 import com.example.palfinder.Fragments.PersonProfileEditFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -16,7 +16,7 @@ class MenuActivity : AppCompatActivity() {
     // Input for all fragments
 
     //Settings, not necessary for now.
-    private val AboutPalfinderFragments = AboutPalfinderFragment()
+    private val AboutPalfinderFragment = AboutPalfinderFragment()
     //Profile, edit and what shows.
     private val PersonProfileEditFragment = PersonProfileEditFragment()
     //Map-fragment, map of you and friends.
@@ -48,7 +48,7 @@ class MenuActivity : AppCompatActivity() {
 
                 R.id.friendList -> replaceFragment(FollowsRecycleViewFragment)
 
-                R.id.setting -> replaceFragment(AboutPalfinderFragments)
+                R.id.setting -> replaceFragment(AboutPalfinderFragment)
 
             }
             true
