@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.palfinder.Fragments.AboutPalfinderFragments
+import com.example.palfinder.Fragments.AboutPalfinderFragment
 import com.example.palfinder.Fragments.FollowersMapViewFragment
 import com.example.palfinder.Fragments.FollowsRecycleViewFragment
 import com.example.palfinder.Fragments.PersonProfileEditFragment
@@ -16,11 +16,11 @@ class MenuActivity : AppCompatActivity() {
     // Input for all fragments
 
     //Settings, not necessary for now.
-    private val AboutPalfinderFragments = AboutPalfinderFragments()
+    private val AboutPalfinderFragments = AboutPalfinderFragment()
     //Profile, edit and what shows.
     private val PersonProfileEditFragment = PersonProfileEditFragment()
     //Map-fragment, map of you and friends.
-    private val FollowersMapViewFragment = FollowersMapViewFragment()
+    private val MapViewFragment = MapViewFragment()
     //List of friends, followers and those you follow.
     private val FollowsRecycleViewFragment = FollowsRecycleViewFragment()
 
@@ -36,13 +36,13 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        replaceFragment(FollowersMapViewFragment)
+        replaceFragment(MapViewFragment)
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
 
-                R.id.map -> replaceFragment(FollowersMapViewFragment)
+                R.id.map -> replaceFragment(MapViewFragment)
 
                 R.id.profile -> replaceFragment(PersonProfileEditFragment)
 
