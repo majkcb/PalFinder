@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 class FollowersActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RecyclerAdapterFollowers.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<RecyclerViewFollowersAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +20,7 @@ class FollowersActivity : AppCompatActivity() {
 
         recyclerViewFollowers.layoutManager = layoutManager
 
-        adapter = RecyclerAdapterFollowers()
+        adapter = RecyclerViewFollowersAdapter()
         recyclerViewFollowers.adapter = adapter
     }
 }

@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.palfinder.R
-import com.example.palfinder.RecyclerAdapterFollowers
+import com.example.palfinder.RecyclerViewFollowingAdapter
 
-class FollowsRecycleViewFragment : Fragment() {
+class FollowingRecyclerViewFragment : Fragment() {
 
 
 
@@ -27,11 +27,11 @@ class FollowsRecycleViewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val view = inflater.inflate(R.layout.fragment_follows_recycle_view, container, false)
-        val recycleView = view.findViewById<RecyclerView>(R.id.david)
-        val adapter = RecyclerAdapterFollowers()
-        recycleView.layoutManager = LinearLayoutManager(activity)
-        recycleView.adapter = adapter
+        val view = inflater.inflate(R.layout.fragment_following_recycler_view, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.followingRecyclerView)
+        val adapter = RecyclerViewFollowingAdapter()
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter = adapter
         return view
 
     }
