@@ -11,14 +11,14 @@ class MenuActivity : AppCompatActivity() {
     // Input for all fragments
 
     //Settings, not necessary for now.
-    private val AboutPalfinderFragment = AboutPalfinderFragment()
+    private val aboutPalfinderFragment = AboutPalfinderFragment()
     //Profile, edit and what shows.
-    private val PersonProfileEditFragment = PersonProfileEditFragment()
+    private val personProfileEditFragment = PersonProfileEditFragment()
     //Map-fragment, map of you and friends.
-    private val MapViewFragment = MapViewFragment()
+    private val mapViewFragment = MapViewFragment()
     //List of friends, followers and those you follow.
-    private val FollowsRecycleViewFragment = FollowsRecycleViewFragment()
-    private val FollowersRecycleViewFragment = FollowersRecycleViewFragment()
+    private val followingRecyclerViewFragment = FollowingRecyclerViewFragment()
+    private val followersRecyclerViewFragment = FollowersRecyclerViewFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,21 +26,21 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_layout)
 
 
-        replaceFragment(MapViewFragment)
+        replaceFragment(mapViewFragment)
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
 
-                R.id.map -> replaceFragment(MapViewFragment)
+                R.id.map -> replaceFragment(mapViewFragment)
 
-                R.id.profile -> replaceFragment(PersonProfileEditFragment)
+                R.id.profile -> replaceFragment(personProfileEditFragment)
 
-                R.id.friendList -> replaceFragment(FollowsRecycleViewFragment)
+                R.id.followers -> replaceFragment(followersRecyclerViewFragment)
 
-                R.id.follower -> replaceFragment(FollowersRecycleViewFragment)
+                R.id.following -> replaceFragment(followingRecyclerViewFragment)
 
-                R.id.setting -> replaceFragment(AboutPalfinderFragment)
+                R.id.setting -> replaceFragment(aboutPalfinderFragment)
 
             }
             true

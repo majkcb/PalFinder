@@ -12,14 +12,14 @@
         android:title="Profile"/>
 
     <item
-        android:id="@+id/friendList"
+        android:id="@+id/followers"
         android:icon="@drawable/friend_list_button"
-        android:title="Friend List"/>
+        android:title="Followers List" />
 
     <item
-        android:id="@+id/follower"
+        android:id="@+id/following"
         android:icon="@drawable/followers_button"
-        android:title="Followers List"/>
+        android:title="Following List" />
 
     <item
         android:id="@+id/setting"
