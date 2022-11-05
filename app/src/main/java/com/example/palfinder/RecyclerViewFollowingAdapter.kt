@@ -8,42 +8,38 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewFollowingAdapter: RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
-
-    private var names = arrayOf("Following-name One", "Following-name Two", "Following-name Three", "Following-name Four", "Following-name Five", "Following-name Six", "Following-name Seven", "Following-name Eight")
-    private var images = intArrayOf(R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground)
+class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+    : RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewFollowingAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.following_card_layout, parent, false)
-        return ViewHolder(v)
+        val followsRecyclerRow = LayoutInflater.from(parent.context).inflate(R.layout.following_card_layout, parent, false)
+        return ViewHolder(followsRecyclerRow)
     }
 
     override fun getItemCount(): Int {
-        return names.size
+        return persons.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewFollowingAdapter.ViewHolder, position : Int) {
-        holder.followingName.text = names[position]
-        holder.followingImage.setImageResource(images[position])
+    override fun onBindViewHolder(holder: ViewHolder, position : Int) {
+        val person = persons[position]
 
-
+        holder.followingName.text = persons[position].name
+        holder.followingCity.text = persons[position].city
+        holder.followingPhoneNumber.text = persons[position].phoneNumber
+        holder.followingImage.setImageResource(persons[position].photo)
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var followingImage: ImageView
-        var followingName : TextView
+        val followingImage = itemView.findViewById<ImageView>(R.id.following_image)
+        val followingName = itemView.findViewById<TextView>(R.id.following_name)
+        val followingCity = itemView.findViewById<TextView>(R.id.following_city)
+        val followingPhoneNumber = itemView.findViewById<TextView>(R.id.following_phone_number)
 
         init {
-            followingImage = itemView.findViewById(R.id.following_image)
-            followingName = itemView.findViewById(R.id.following_name)
-
             itemView.setOnClickListener {
                 val position: Int = absoluteAdapterPosition
-                Toast.makeText(itemView.context, "you clicked on ${names[position]}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context, "you clicked on ${persons[position].name}", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-
-
 }

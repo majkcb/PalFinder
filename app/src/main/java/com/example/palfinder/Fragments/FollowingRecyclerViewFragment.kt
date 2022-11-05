@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.palfinder.PersonDataModel
 import com.example.palfinder.R
 import com.example.palfinder.RecyclerViewFollowingAdapter
 
@@ -29,10 +30,14 @@ class FollowingRecyclerViewFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_following_recycler_view, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.followingRecyclerView)
-        val adapter = RecyclerViewFollowingAdapter()
+        val adapter = RecyclerViewFollowingAdapter(PersonDataModel.persons)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = adapter
         return view
+
+    }
+
+    private fun buildDisplayData() {
 
     }
 
