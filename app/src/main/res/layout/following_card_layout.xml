@@ -6,14 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#32C080">
+    app:cardBackgroundColor="#22C080">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:background="@color/com_facebook_primary_button_disabled_text_color"
+        android:padding="5dp"
+        app:cardBackgroundColor="#22C080">
 
         <ImageView
             android:id="@+id/person_read_photo_imageView"
@@ -29,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:hint="name"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/person_read_photo_imageView"
             app:layout_constraintTop_toTopOf="@+id/person_read_photo_imageView" />
@@ -40,6 +43,7 @@
             android:ems="10"
             android:hint="following city"
             android:inputType="textPersonName"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/following_name"
             app:layout_constraintTop_toBottomOf="@+id/following_name" />
@@ -51,6 +55,7 @@
             android:ems="10"
             android:hint="following phone number"
             android:inputType="textPersonName"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/following_name"
             app:layout_constraintTop_toBottomOf="@+id/following_city" />
@@ -65,6 +70,7 @@
             android:inputType="textMultiLine"
             android:lines="3"
             android:singleLine="false"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/following_name"
             app:layout_constraintTop_toBottomOf="@+id/following_phoneNumber" />
@@ -73,11 +79,13 @@
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Follow?"
-            tools:layout_editor_absoluteX="3dp"
-            tools:layout_editor_absoluteY="88dp"
+            android:layout_marginStart="5dp"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="auto"
+            android:text="Follow"
             app:layout_constraintStart_toStartOf="@+id/person_read_photo_imageView"
-            app:layout_constraintTop_toBottomOf="@+id/person_read_photo_imageView"/>
+            app:layout_constraintTop_toBottomOf="@+id/person_read_photo_imageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

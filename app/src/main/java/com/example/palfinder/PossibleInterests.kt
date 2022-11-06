@@ -4,7 +4,7 @@ enum class PossibleInterests ( val interest : Int) {
     GOLF(1),
     DISC_GOLF(2),
     FISHING(3),
-    DANCE(4),
+    DANCING(4),
     MUSIC_COMPOSING(5),
     ART(6),
     PROGRAMMING(7),
