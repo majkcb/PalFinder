@@ -1,5 +1,6 @@
 package com.example.palfinder
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,17 +24,19 @@ class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListen
     override fun onBindViewHolder(holder: ViewHolder, position : Int) {
         val person = persons[position]
 
-        holder.followingName.text = persons[position].name
-        holder.followingCity.text = persons[position].city
-        holder.followingPhoneNumber.text = persons[position].phoneNumber
-        holder.followingImage.setImageResource(persons[position].photo)
+        holder.followingName.text = person.name
+        holder.followingCity.text = person.city
+        holder.followingPhoneNumber.text = person.phoneNumber
+        holder.followingImage.setImageResource(person.photo)
+        holder.followingInterests.text = person.interests.toString()
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val followingImage = itemView.findViewById<ImageView>(R.id.following_image)
-        val followingName = itemView.findViewById<TextView>(R.id.following_name)
-        val followingCity = itemView.findViewById<TextView>(R.id.following_city)
-        val followingPhoneNumber = itemView.findViewById<TextView>(R.id.following_phone_number)
+        val followingImage = itemView.findViewById<ImageView>(R.id.person_read_photo_imageView)!!
+        val followingName = itemView.findViewById<TextView>(R.id.following_name)!!
+        val followingCity = itemView.findViewById<TextView>(R.id.following_city)!!
+        val followingPhoneNumber = itemView.findViewById<TextView>(R.id.following_phoneNumber)!!
+        val followingInterests = itemView.findViewById<TextView>(R.id.following_interests)!!
 
         init {
             itemView.setOnClickListener {
@@ -42,4 +45,11 @@ class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListen
             }
         }
     }
+
+    fun printInterests(person:Person, interest:PossibleInterests, interests: PossibleInterests){
+        for (interest in person.interests) {
+            Log.d("Interest","${interest}")
+        }
+    }
+
 }
