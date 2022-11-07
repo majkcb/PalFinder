@@ -1,5 +1,6 @@
 package com.example.palfinder
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,42 +9,47 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewFollowingAdapter: RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
-
-    private var names = arrayOf("Following-name One", "Following-name Two", "Following-name Three", "Following-name Four", "Following-name Five", "Following-name Six", "Following-name Seven", "Following-name Eight")
-    private var images = intArrayOf(R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground)
+class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+    : RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewFollowingAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.following_card_layout, parent, false)
-        return ViewHolder(v)
+        val followsRecyclerRow = LayoutInflater.from(parent.context).inflate(R.layout.following_card_layout, parent, false)
+        return ViewHolder(followsRecyclerRow)
     }
 
     override fun getItemCount(): Int {
-        return names.size
+        return persons.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewFollowingAdapter.ViewHolder, position : Int) {
-        holder.followingName.text = names[position]
-        holder.followingImage.setImageResource(images[position])
+    override fun onBindViewHolder(holder: ViewHolder, position : Int) {
+        val person = persons[position]
 
-
+        holder.followingName.text = person.name
+        holder.followingCity.text = person.city
+        holder.followingPhoneNumber.text = person.phoneNumber
+        holder.followingImage.setImageResource(person.photo)
+        holder.followingInterests.text = person.interests.toString()
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var followingImage: ImageView
-        var followingName : TextView
+        val followingImage = itemView.findViewById<ImageView>(R.id.person_read_photo_imageView)!!
+        val followingName = itemView.findViewById<TextView>(R.id.following_name)!!
+        val followingCity = itemView.findViewById<TextView>(R.id.following_city)!!
+        val followingPhoneNumber = itemView.findViewById<TextView>(R.id.following_phoneNumber)!!
+        val followingInterests = itemView.findViewById<TextView>(R.id.following_interests)!!
 
         init {
-            followingImage = itemView.findViewById(R.id.following_image)
-            followingName = itemView.findViewById(R.id.following_name)
-
             itemView.setOnClickListener {
                 val position: Int = absoluteAdapterPosition
-                Toast.makeText(itemView.context, "you clicked on ${names[position]}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context, "you clicked on ${persons[position].name}", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-
+    fun printInterests(person:Person, interest:PossibleInterests, interests: PossibleInterests){
+        for (interest in person.interests) {
+            Log.d("Interest","${interest}")
+        }
+    }
 
 }

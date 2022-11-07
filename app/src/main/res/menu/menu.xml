@@ -14,16 +14,16 @@
     <item
         android:id="@+id/followers"
         android:icon="@drawable/friend_list_button"
-        android:title="Followers List" />
+        android:title="Followers" />
 
     <item
         android:id="@+id/following"
         android:icon="@drawable/followers_button"
-        android:title="Following List" />
+        android:title="Following" />
 
     <item
         android:id="@+id/setting"
         android:icon="@drawable/setting_button"
-        android:title="Setting"/>
+        android:title="Settings"/>
 
 </menu>
