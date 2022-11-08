@@ -21,8 +21,6 @@ class PersonProfileEditFragment : Fragment() {
     lateinit var et_interest: EditText
     lateinit var et_email:EditText
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +29,6 @@ class PersonProfileEditFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
-
 
     }
 
