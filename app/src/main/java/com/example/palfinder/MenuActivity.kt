@@ -25,8 +25,7 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_layout)
 
-
-        replaceFragment(mapViewFragment)
+        replaceFragment(personProfileEditFragment)
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener {
