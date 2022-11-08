@@ -19,6 +19,29 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/person_read_name_textView"
+        app:shapeAppearanceOverlay="@style/Widget.Material3.CircularProgressIndicator"
+        app:srcCompat="@drawable/profile_icon" />
+
+    <ImageView
+        android:id="@+id/edit_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/circle_shape"
+        android:padding="8dp"
+        android:src="@drawable/edit_button"
+        app:layout_constraintBottom_toBottomOf="@id/profile_icon"
+        app:layout_constraintEnd_toEndOf="@id/profile_icon"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/person_read_name_textView"
@@ -37,18 +60,18 @@
         android:id="@+id/et_name"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="150dp"
-        android:text="Name"
+        android:layout_marginTop="20dp"
+        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/person_read_name_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_icon" />
 
     <EditText
         android:id="@+id/et_age"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:text="Age"
+        android:layout_marginTop="15dp"
+        android:hint="Age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
@@ -57,8 +80,8 @@
         android:id="@+id/et_interest"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:text="Intrest"
+        android:layout_marginTop="15dp"
+        android:hint="Intrest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_age" />
@@ -67,11 +90,21 @@
         android:id="@+id/et_email"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:text="Email"
+        android:layout_marginTop="15dp"
+        android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_interest" />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:hint="Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <Button
         android:id="@+id/button_register"
