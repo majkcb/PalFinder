@@ -45,7 +45,7 @@ class RecyclerViewAllUsersAdapter(val persons : List<Person>/*, val clickListene
         }
     }
 
-    fun printInterests(person:PersonGammal, interest:PossibleInterests, interests: PossibleInterests){
+    fun printInterests(person:PersonOldClass, interest:PossibleInterests, interests: PossibleInterests){
         for (interest in person.interests) {
             Log.d("Interest","${interest}")
         }

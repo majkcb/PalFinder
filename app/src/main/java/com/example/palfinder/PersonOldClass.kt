@@ -2,12 +2,12 @@ package com.example.palfinder
 
 import android.widget.EditText
 
-class PersonGammal (var photo : Int, var name: String, var city : String, var phoneNumber: String/*, var interests: MutableList<PossibleInterests>*/) {
+class PersonOldClass (var photo : Int, var name: String, var city : String, var phoneNumber: String/*, var interests: MutableList<PossibleInterests>*/) {
 
 
     var interests = mutableListOf<PossibleInterests>()
-    private var followersList = mutableListOf<PersonGammal>()
-    private var followingList = mutableListOf<PersonGammal>()
+    private var followersList = mutableListOf<PersonOldClass>()
+    private var followingList = mutableListOf<PersonOldClass>()
 
     lateinit var emailAddress : String
     lateinit var description : String
@@ -47,19 +47,19 @@ class PersonGammal (var photo : Int, var name: String, var city : String, var ph
 
     */
 
-    fun addfollower(follower: PersonGammal){
+    fun addfollower(follower: PersonOldClass){
         followersList.add(follower)
     }
 
-    fun removefollower(follower: PersonGammal){
+    fun removefollower(follower: PersonOldClass){
         followersList.remove(follower)
     }
 
-    fun addfollows(follows: PersonGammal){
+    fun addfollows(follows: PersonOldClass){
         followingList.add(follows)
     }
 
-    fun removefollows(follows: PersonGammal){
+    fun removefollows(follows: PersonOldClass){
         followingList.remove(follows)
     }
 
