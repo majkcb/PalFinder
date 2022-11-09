@@ -4,17 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.palfinder.Person
 import com.example.palfinder.R
+import com.example.palfinder.RecyclerViewAllUsersAdapter
 import com.example.palfinder.RecyclerViewFollowingAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
-class FollowingRecyclerViewFragment : Fragment() {
+class AllUsersRecyclerViewFragment : Fragment() {
 
     val personsList = mutableListOf<Person>()
 
@@ -35,9 +38,9 @@ class FollowingRecyclerViewFragment : Fragment() {
         val db = Firebase.firestore
 
 
-        val view = inflater.inflate(R.layout.fragment_following_recycler_view, container, false)
+        val view = inflater.inflate(R.layout.fragment_all_users_recycler_view, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.allUsersRecyclerView)
-        val adapter = RecyclerViewFollowingAdapter(personsList)
+        val adapter = RecyclerViewAllUsersAdapter(personsList)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = adapter
 
@@ -57,21 +60,8 @@ class FollowingRecyclerViewFragment : Fragment() {
         return view
     }
 
+
     private fun buildDisplayData() {
 
     }
 }
-
-/* //Test RV_button down here
-val followersButton = findViewById<Button>(R.id.followersButton)
-followersButton.setOnClickListener {
-    val intent = Intent(this, FollowersActivity::class.java)
-    startActivity(intent)
-}
-//xml fil
-<Button
-            android:id="@+id/followersButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Followers" />
-*/

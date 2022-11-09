@@ -12,18 +12,25 @@
         android:title="Profile"/>
 
     <item
+        android:id="@+id/allUsers"
+        android:icon="@drawable/setting_button"
+        android:title="All"/>
+
+    <item
         android:id="@+id/followers"
         android:icon="@drawable/friend_list_button"
         android:title="Followers" />
+
 
     <item
         android:id="@+id/following"
         android:icon="@drawable/followers_button"
         android:title="Following" />
 
-    <item
-        android:id="@+id/setting"
+    <!--
+ <item
+        android:id="@+id/about"
         android:icon="@drawable/setting_button"
-        android:title="Settings"/>
-
+        android:title="Settings" />
+-->
 </menu>

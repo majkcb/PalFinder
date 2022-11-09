@@ -1,72 +1,14 @@
 package com.example.palfinder
 
-import android.widget.EditText
+class Person(var firstName: String? = null,
+             var lastname :String? = null,
+             var age : Int? = null,
+             var email : String? = null,
+             var interests : String? =null)
 
-class Person (var photo : Int, var name: String, var city : String, var phoneNumber: String/*, var interests: MutableList<PossibleInterests>*/) {
 
-
-    var interests = mutableListOf<PossibleInterests>()
-    private var followersList = mutableListOf<Person>()
-    private var followingList = mutableListOf<Person>()
-
-    lateinit var emailAddress : String
-    lateinit var description : String
-    private lateinit var descriptionEditText: EditText
-
-    fun editPhoto(photo : Int){
-        this.photo = photo
-    }
-
-    fun editEmailAddress(emailAddress : String){
-        this.emailAddress = emailAddress
-    }
-
-    fun editName(name:String){
-        this.name = name
-    }
-
-    fun editPhoneNumber(phoneNumber:String){
-        this.phoneNumber = phoneNumber
-    }
-
-    fun editCity(city:String){
-        this.city = city
-    }
-
-    fun editDescription(text:String){
-        description = text
-    }
-
-   /*fun addInterest(interest: PossibleInterests){
-        interests.add(interest)
-    }
-
-    fun removeInterest(interest: PossibleInterests){
-        interests.remove(interest)
-    }
-
-    */
-
-    fun addfollower(follower: Person){
-        followersList.add(follower)
-    }
-
-    fun removefollower(follower: Person){
-        followersList.remove(follower)
-    }
-
-    fun addfollows(follows: Person){
-        followingList.add(follows)
-    }
-
-    fun removefollows(follows: Person){
-        followingList.remove(follows)
-    }
-
-    /*  fun editPhoto (photo:Int) {
-        this.photo = photo
-    }   */
-
-    //var geographicPositionCurrent: MapPosition?????
-
-}
+//"firstName" to et_name.text.toString(),
+//"lastName" to et_email.text.toString(),
+//"age" to et_age.text.toString().toIntOrNull(),
+//"email" to et_email.text.toString(),
+//"interests" to et_interest.text.toString()

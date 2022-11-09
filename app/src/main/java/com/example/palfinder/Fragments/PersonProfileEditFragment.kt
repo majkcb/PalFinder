@@ -8,8 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.palfinder.Person
 import com.example.palfinder.R
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -21,8 +21,6 @@ class PersonProfileEditFragment : Fragment() {
     lateinit var et_interest: EditText
     lateinit var et_email:EditText
 
-    private var binding: PersonProfileEditFragment? = null
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,9 +28,6 @@ class PersonProfileEditFragment : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment
-     /*   binding = PersonProfileEditFragment().inflate(inflater, container, false)
-        setContentView(binding.root)
-        return view */
         return inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
 
     }
@@ -50,13 +45,20 @@ class PersonProfileEditFragment : Fragment() {
         val updateButton = view.findViewById<Button>(R.id.button_register)
 
         updateButton.setOnClickListener {
-            val person = hashMapOf(
-                "First Name" to et_name.text.toString(),
-                "Last Name" to et_email.text.toString(),
-                "Age" to et_age.text.toString().toIntOrNull(),
-                "Email" to et_email.text.toString(),
-                "Interests" to et_interest.text.toString()
+//            val person = hashMapOf(
+//                "First Name" to et_name.text.toString(),
+//                "Last Name" to et_email.text.toString(),
+//                "Age" to et_age.text.toString().toIntOrNull(),
+//                "Email" to et_email.text.toString(),
+//                "Interests" to et_interest.text.toString()
+//            )
+            val person = Person(et_name.text.toString(),
+                et_email.text.toString(),
+                et_age.text.toString().toIntOrNull(),
+                et_email.text.toString(),
+                et_interest.text.toString()
             )
+
 
             db.collection("users")
                 .add(person)
@@ -72,12 +74,4 @@ class PersonProfileEditFragment : Fragment() {
     }
 
 
-    }
-
-
-    
-
-
-
-
-
+}

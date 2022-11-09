@@ -17,6 +17,7 @@ class MenuActivity : AppCompatActivity() {
     //Map-fragment, map of you and friends.
     private val mapViewFragment = MapViewFragment()
     //List of friends, followers and those you follow.
+    private val allUsersRecyclerViewFragment = AllUsersRecyclerViewFragment()
     private val followingRecyclerViewFragment = FollowingRecyclerViewFragment()
     private val followersRecyclerViewFragment = FollowersRecyclerViewFragment()
 
@@ -35,11 +36,13 @@ class MenuActivity : AppCompatActivity() {
 
                 R.id.profile -> replaceFragment(personProfileEditFragment)
 
+                R.id.allUsers -> replaceFragment(allUsersRecyclerViewFragment)
+
                 R.id.followers -> replaceFragment(followersRecyclerViewFragment)
 
                 R.id.following -> replaceFragment(followingRecyclerViewFragment)
 
-                R.id.setting -> replaceFragment(aboutPalfinderFragment)
+                //R.id.settings -> replaceFragment(allUsersRecyclerViewFragment)
 
             }
             true
