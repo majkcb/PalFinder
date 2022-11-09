@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+class RecyclerViewFollowingAdapter(val persons : List<PersonTMP>/*, val clickListener: ClickListener*/)
     : RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewFollowingAdapter.ViewHolder {
@@ -24,11 +24,11 @@ class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListen
     override fun onBindViewHolder(holder: ViewHolder, position : Int) {
         val person = persons[position]
 
-        holder.followingName.text = person.name
-        holder.followingCity.text = person.city
-        holder.followingPhoneNumber.text = person.phoneNumber
-        holder.followingImage.setImageResource(person.photo)
-        holder.followingInterests.text = person.interests.toString()
+        holder.followingName.text = person.firstName
+        holder.followingCity.text = person.lastname
+       // holder.followingPhoneNumber.text = person.
+       // holder.followingImage.setImageResource(person.photo)
+        holder.followingInterests.text = person.interests
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -41,7 +41,7 @@ class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListen
         init {
             itemView.setOnClickListener {
                 val position: Int = absoluteAdapterPosition
-                Toast.makeText(itemView.context, "you clicked on ${persons[position].name}", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(itemView.context, "you clicked on ${persons[position].name}", Toast.LENGTH_SHORT).show()
             }
         }
     }
