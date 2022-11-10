@@ -4,13 +4,13 @@
     android:id="@+id/recycleViewAllUsers"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.FollowingRecyclerViewFragment">
+    tools:context=".Fragments.AllUsersRecyclerViewFragment">
 
     <TextView
         android:id="@+id/allUsersRV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Following"
+        android:text="AllUsers"
         android:textSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/allUsersRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/com_facebook_device_auth_text"
+        android:background="@color/com_facebook_button_background_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
