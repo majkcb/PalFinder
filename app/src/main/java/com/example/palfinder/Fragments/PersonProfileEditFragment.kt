@@ -43,8 +43,8 @@ class PersonProfileEditFragment : Fragment() {
         val db = Firebase.firestore
 
         val updateButton = view.findViewById<Button>(R.id.button_register)
-
         updateButton.setOnClickListener {
+
 //            val person = hashMapOf(
 //                "First Name" to et_name.text.toString(),
 //                "Last Name" to et_email.text.toString(),
@@ -52,6 +52,9 @@ class PersonProfileEditFragment : Fragment() {
 //                "Email" to et_email.text.toString(),
 //                "Interests" to et_interest.text.toString()
 //            )
+
+
+
             val person = Person(et_name.text.toString(),
                 et_email.text.toString(),
                 et_age.text.toString().toIntOrNull(),
