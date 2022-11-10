@@ -84,6 +84,7 @@ class MainActivity : AppCompatActivity() {
 
         fbLogIn()
 
+
         //Google inlogg nedan
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
