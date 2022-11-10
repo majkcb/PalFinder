@@ -1,4 +1,4 @@
-package com.example.palfinder.Fragments
+package com.example.palfinder.Profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
