@@ -1,10 +1,12 @@
 package com.example.palfinder
 
-class Person(var firstName: String? = null,
-             var lastname :String? = null,
+class Person(var name: String? = null,
+             var city :String? = null,
              var age : Int? = null,
+             var phoneNumber : String? = null,
              var email : String? = null,
-             var interests : String? =null)
+             var interests : String? =null,
+             var description : String? = null)
 
 
 //"firstName" to et_name.text.toString(),
