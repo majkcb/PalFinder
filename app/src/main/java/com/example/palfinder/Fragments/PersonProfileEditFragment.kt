@@ -68,7 +68,6 @@ class PersonProfileEditFragment : Fragment() {
                 .addOnFailureListener { e ->
                     Toast.makeText(view.context, "Failed", Toast.LENGTH_LONG).show()
                 }
-
         }
 
     }
