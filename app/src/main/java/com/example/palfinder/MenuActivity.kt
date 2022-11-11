@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.palfinder.Fragments.*
+import com.example.palfinder.Profile.PersonProfileEditFragment
+import com.example.palfinder.Profile.PersonProfileViewFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MenuActivity : AppCompatActivity() {
@@ -14,6 +16,7 @@ class MenuActivity : AppCompatActivity() {
     private val aboutPalfinderFragment = AboutPalfinderFragment()
     //Profile, edit and what shows.
     private val personProfileEditFragment = PersonProfileEditFragment()
+    private val personProfileViewFragment = PersonProfileViewFragment()
     //Map-fragment, map of you and friends.
     private val mapViewFragment = MapViewFragment()
     //List of friends, followers and those you follow.
@@ -34,7 +37,7 @@ class MenuActivity : AppCompatActivity() {
 
                 R.id.map -> replaceFragment(mapViewFragment)
 
-                R.id.profile -> replaceFragment(personProfileEditFragment)
+                R.id.profile -> replaceFragment(personProfileViewFragment)
 
                 R.id.allUsers -> replaceFragment(allUsersRecyclerViewFragment)
 
