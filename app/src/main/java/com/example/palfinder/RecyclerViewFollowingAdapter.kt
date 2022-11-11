@@ -23,19 +23,23 @@ class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListen
     override fun onBindViewHolder(holder: ViewHolder, position : Int) {
         val person = persons[position]
 
+        // holder.followingImage.setImageResource(person.photo)
         holder.followingName.text = person.name
+        holder.followingSsn.text = person.socialSecurityNumber.toString()
         holder.followingCity.text = person.city
         holder.followingPhoneNumber.text = person.phoneNumber
-        // holder.followingImage.setImageResource(person.photo)
         holder.followingInterests.text = person.interests
+        holder.followingDescription.text = person.description
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val followingImage = itemView.findViewById<ImageView>(R.id.person_read_photo_imageView)!!
         val followingName = itemView.findViewById<TextView>(R.id.following_name)!!
+        val followingSsn = itemView.findViewById<TextView>(R.id.following_age)!!
         val followingCity = itemView.findViewById<TextView>(R.id.following_city)!!
         val followingPhoneNumber = itemView.findViewById<TextView>(R.id.following_phoneNumber)!!
         val followingInterests = itemView.findViewById<TextView>(R.id.following_interests)!!
+        val followingDescription = itemView.findViewById<TextView>(R.id.following_description)!!
         //val followingEmailAddress = itemView.findViewById<TextView>(R.id.)
 
         init {

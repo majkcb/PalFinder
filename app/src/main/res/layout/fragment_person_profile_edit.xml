@@ -59,7 +59,7 @@
 
     <EditText
         android:id="@+id/et_name"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:hint="Name"
@@ -68,46 +68,70 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_icon" />
 
 
-
     <EditText
-        android:id="@+id/et_age"
-        android:layout_width="150dp"
+        android:id="@+id/et_soicalsecuritynumber"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:hint="Age"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="SSN: yyyymmddnnnn"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <EditText
+        android:id="@+id/et_city"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:hint="City"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_soicalsecuritynumber" />
+
+    <EditText
         android:id="@+id/et_interest"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:hint="Intrest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_age" />
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_city" />
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:hint="Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_interest" />
 
     <EditText
-        android:id="@+id/et_number"
-        android:layout_width="150dp"
+        android:id="@+id/et_phonenumber"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:hint="Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Phone Number"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:hint="Write a few words about yourself"
+        android:inputType="textMultiLine"
+        android:maxEms="30"
+        android:maxLines="6"
+        android:minEms="15"
+        android:minLines="3"
+        app:layout_constraintEnd_toEndOf="@+id/et_name"
+        app:layout_constraintStart_toStartOf="@+id/et_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_phonenumber" />
 
     <Button
         android:id="@+id/button_register"
@@ -119,7 +143,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_number" />
+        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
 
 
 

@@ -23,19 +23,23 @@ class RecyclerViewAllUsersAdapter(val persons : List<Person>/*, val clickListene
     override fun onBindViewHolder(holder: ViewHolder, position : Int) {
         val person = persons[position]
 
+        //holder.allUsersImage.setImageResource(person.photo)
         holder.allUsersName.text = person.name
+        holder.allUsersSsn.text = person.socialSecurityNumber.toString()
         holder.allUsersCity.text = person.city
         holder.allUsersPhoneNumber.text = person.phoneNumber
-        //holder.allUsersImage.setImageResource(person.photo)
         holder.allUsersInterests.text = person.interests
+        holder.allUsersDescription.text = person.description
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val allUsersImage = itemView.findViewById<ImageView>(R.id.person_read_photo_imageView)!!
         val allUsersName = itemView.findViewById<TextView>(R.id.all_users_name)!!
+        val allUsersSsn = itemView.findViewById<TextView>(R.id.all_users_age)!!
         val allUsersCity = itemView.findViewById<TextView>(R.id.all_users_city)!!
         val allUsersPhoneNumber = itemView.findViewById<TextView>(R.id.all_users_phoneNumber)!!
         val allUsersInterests = itemView.findViewById<TextView>(R.id.all_users_interests)!!
+        val allUsersDescription = itemView.findViewById<TextView>(R.id.all_users_description)!!
 
         init {
             itemView.setOnClickListener {
