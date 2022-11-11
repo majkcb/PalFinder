@@ -36,7 +36,7 @@ class FollowingRecyclerViewFragment : Fragment() {
 
 
         val view = inflater.inflate(R.layout.fragment_following_recycler_view, container, false)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.allUsersRecyclerView)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.followingRecyclerView)
         val adapter = RecyclerViewFollowingAdapter(personsList)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = adapter

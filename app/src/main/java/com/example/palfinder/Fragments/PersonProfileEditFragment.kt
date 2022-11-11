@@ -17,9 +17,12 @@ import com.google.firebase.ktx.Firebase
 class PersonProfileEditFragment : Fragment() {
 
     lateinit var et_name: EditText
-    lateinit var et_age: EditText
+    lateinit var et_socialsecuritynumber: EditText
+    lateinit var et_city: EditText
+    lateinit var et_phonenumber: EditText
     lateinit var et_interest: EditText
     lateinit var et_email:EditText
+    lateinit var et_description: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,29 +39,28 @@ class PersonProfileEditFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         et_name = view.findViewById(R.id.et_name)
-        et_age = view.findViewById(R.id.et_age)
+        et_socialsecuritynumber = view.findViewById(R.id.et_soicalsecuritynumber)
+        et_city = view.findViewById(R.id.et_city)
+        et_phonenumber = view.findViewById(R.id.et_phonenumber)
         et_email = view.findViewById(R.id.et_email)
         et_interest = view.findViewById(R.id.et_interest)
+        et_description = view.findViewById(R.id.et_description)
 
         val db = Firebase.firestore
 
         val updateButton = view.findViewById<Button>(R.id.button_register)
 
         updateButton.setOnClickListener {
-//            val person = hashMapOf(
-//                "First Name" to et_name.text.toString(),
-//                "Last Name" to et_email.text.toString(),
-//                "Age" to et_age.text.toString().toIntOrNull(),
-//                "Email" to et_email.text.toString(),
-//                "Interests" to et_interest.text.toString()
-//            )
-            val person = Person(et_name.text.toString(),
-                et_email.text.toString(),
-                et_age.text.toString().toIntOrNull(),
-                et_email.text.toString(),
-                et_interest.text.toString()
-            )
 
+            val person = Person(
+                et_name.text.toString(),
+                et_socialsecuritynumber.text.toString().toIntOrNull(),
+                et_city.text.toString(),
+                et_phonenumber.text.toString(),
+                et_email.text.toString(),
+                et_interest.text.toString(),
+                et_description.text.toString()
+            )
 
             db.collection("users")
                 .add(person)

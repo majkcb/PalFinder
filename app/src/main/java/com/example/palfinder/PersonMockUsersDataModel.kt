@@ -1,6 +1,6 @@
 package com.example.palfinder
 
-object PersonDataModel {
+object PersonMockUsersDataModel {
     val persons = mutableListOf<PersonOldClass>()
 
     init {
