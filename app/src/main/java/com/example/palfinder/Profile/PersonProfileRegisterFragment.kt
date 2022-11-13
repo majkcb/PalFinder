@@ -1,27 +1,27 @@
 package com.example.palfinder.Profile
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.palfinder.Person
 import com.example.palfinder.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class PersonProfileEditFragment : Fragment() {
+class PersonProfileRegisterFragment : Fragment() {
 
     lateinit var et_name: EditText
     lateinit var et_socialsecuritynumber: EditText
     lateinit var et_city: EditText
     lateinit var et_phonenumber: EditText
     lateinit var et_interest: EditText
-    lateinit var et_email:EditText
+    lateinit var et_email: EditText
     lateinit var et_description: EditText
 
 
@@ -31,18 +31,18 @@ class PersonProfileEditFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-     /*   val view = inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
-        val updateButton = view.findViewById<Button>(R.id.button_register)
+        /*   val view = inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
+           val updateButton = view.findViewById<Button>(R.id.button_register)
 
-        updateButton.setOnClickListener {
-            val personProfileViewFragment = PersonProfileViewFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.fragment_container, personProfileViewFragment)
-            transaction.commit()
-        }
-*/
+           updateButton.setOnClickListener {
+               val personProfileViewFragment = PersonProfileViewFragment()
+               val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+               transaction.replace(R.id.fragment_container, personProfileViewFragment)
+               transaction.commit()
+           }
+   */
 
-        return inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
+        return inflater.inflate(R.layout.fragment_person_profile_register, container, false)
 
 
     }
