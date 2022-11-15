@@ -1,6 +1,7 @@
 package com.example.palfinder.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -79,8 +80,12 @@ class AllUsersRecyclerViewFragment : Fragment() {
 
         for (person in personsList) {
             if (text != null) {
-                if (person.interests?.lowercase()!!.contains(text.lowercase())) {
-                    filteredList.add(person)
+                Log.d("!!!", "person:  $person , interest: ${person.interests}")
+
+                if (person.interests != null) {
+                    if (person.interests!!.lowercase().contains(text.lowercase())) {
+                        filteredList.add(person)
+                    }
                 }
 
             }
