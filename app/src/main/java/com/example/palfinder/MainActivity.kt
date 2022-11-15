@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     val RC_SIGN_IN = 100
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -52,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
         /* Nedan är koden för hur vi skapar testanvändare i appen
         detta uppdateras i authentication i firestore. */
-
 
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
@@ -76,13 +76,14 @@ class MainActivity : AppCompatActivity() {
 
         //signa upp och in med email och lösenord nedan
 
-        val signUpButton = findViewById<Button>(R.id.signUpButton)
 
+
+        val signUpButton = findViewById<Button>(R.id.signUpButton)
         signUpButton.setOnClickListener {
             signUp()
         }
 
-        var signInButton = findViewById<Button>(R.id.signInButton)
+        val signInButton = findViewById<Button>(R.id.signInButton)
         signInButton.setOnClickListener {
             signIn()
         }

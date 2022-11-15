@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.palfinder.Fragments.*
 import com.example.palfinder.Profile.PersonProfileEditFragment
+import com.example.palfinder.Profile.PersonProfileRegisterFragment
 import com.example.palfinder.Profile.PersonProfileViewFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -51,7 +52,6 @@ class MenuActivity : AppCompatActivity() {
             }
             true
         }
-
 
     }
 
