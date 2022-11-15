@@ -8,11 +8,21 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAllUsersAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+open class RecyclerViewAllUsersAdapter(var persons : List<Person>/*, val clickListener: ClickListener*/)
     : RecyclerView.Adapter<RecyclerViewAllUsersAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAllUsersAdapter.ViewHolder {
-        val allUsersRecyclerRow = LayoutInflater.from(parent.context).inflate(R.layout.all_users_card_layout, parent, false)
+     fun setFilteredList(filteredList: List<Person>) {
+        this.persons = filteredList
+        notifyDataSetChanged()
+
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerViewAllUsersAdapter.ViewHolder {
+        val allUsersRecyclerRow = LayoutInflater.from(parent.context)
+            .inflate(R.layout.all_users_card_layout, parent, false)
         return ViewHolder(allUsersRecyclerRow)
     }
 
@@ -20,7 +30,7 @@ class RecyclerViewAllUsersAdapter(val persons : List<Person>/*, val clickListene
         return persons.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position : Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val person = persons[position]
 
         //holder.allUsersImage.setImageResource(person.photo)
@@ -32,7 +42,7 @@ class RecyclerViewAllUsersAdapter(val persons : List<Person>/*, val clickListene
         holder.allUsersDescription.text = person.description
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val allUsersImage = itemView.findViewById<ImageView>(R.id.person_read_photo_imageView)!!
         val allUsersName = itemView.findViewById<TextView>(R.id.all_users_name)!!
         val allUsersSsn = itemView.findViewById<TextView>(R.id.all_users_age)!!
@@ -49,10 +59,13 @@ class RecyclerViewAllUsersAdapter(val persons : List<Person>/*, val clickListene
         }
     }
 
-    fun printInterests(person:PersonOldClass, interest:PossibleInterests, interests: PossibleInterests){
+    fun printInterests(
+        person: PersonOldClass,
+        interest: PossibleInterests,
+        interests: PossibleInterests
+    ) {
         for (interest in person.interests) {
-            Log.d("Interest","${interest}")
+            Log.d("Interest", "${interest}")
         }
     }
-
 }
