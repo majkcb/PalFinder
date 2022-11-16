@@ -82,7 +82,7 @@ class PersonProfileEditFragment : Fragment() {
                 et_description.text.toString()
             )
 
-            db.collection("users")
+            db.collection("users")//skriver till databasen
                 .add(person)
                 .addOnSuccessListener { documentReference ->
                     Toast.makeText(view.context, "Success", Toast.LENGTH_LONG).show()

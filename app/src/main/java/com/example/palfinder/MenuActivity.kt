@@ -1,6 +1,7 @@
 package com.example.palfinder
 
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -63,6 +64,5 @@ class MenuActivity : AppCompatActivity() {
             transaction.commit()
         }
     }
-
 
 }

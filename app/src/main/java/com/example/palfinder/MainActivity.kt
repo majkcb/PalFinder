@@ -3,6 +3,8 @@ package com.example.palfinder
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -60,6 +62,21 @@ class MainActivity : AppCompatActivity() {
 
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
+
+        val showHideBtn = findViewById<Button>(R.id.hideShowBtn)
+
+        showHideBtn.setOnClickListener {
+            if (showHideBtn.text.toString().equals("Show")) {
+                passwordView.transformationMethod =
+                    HideReturnsTransformationMethod.getInstance()
+                showHideBtn.text = "Hide"
+            } else {
+                passwordView.transformationMethod = PasswordTransformationMethod.getInstance()
+                showHideBtn.text = "Show"
+            }
+        }
+
+
 
         auth = Firebase.auth //kom åt authentication
 
