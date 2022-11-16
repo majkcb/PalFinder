@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.palfinder.Fragments.*
 import com.example.palfinder.Profile.PersonProfileEditFragment
 import com.example.palfinder.Profile.PersonProfileRegisterFragment
