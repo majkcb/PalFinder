@@ -13,7 +13,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/com_smart_login_code"
+        android:background="#A905D9"
         android:padding="5dp"
         app:cardBackgroundColor="#22C080">
 

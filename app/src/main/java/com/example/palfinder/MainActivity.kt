@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 
         // facebook-inloggning nedan
 
-        loginButton = findViewById(R.id.loginFacebook)
+      //  loginButton = findViewById(R.id.loginFacebook)
 
        // facebookButton = findViewById(R.id.fb_button)
 
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
         // facebookLogin()
         
-        fbLogIn()
+       // fbLogIn()
 
         //Google inlogg nedan
 
