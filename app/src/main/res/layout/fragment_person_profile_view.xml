@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <EditText
+        <TextView
             android:id="@+id/et_name"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -57,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profile_icon" />
 
 
-        <EditText
+        <TextView
             android:id="@+id/et_soicalsecuritynumber"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -67,7 +67,7 @@
             app:layout_constraintStart_toStartOf="@+id/et_name"
             app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_city"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -77,7 +77,7 @@
             app:layout_constraintEnd_toEndOf="@+id/et_name"
             app:layout_constraintTop_toBottomOf="@+id/et_soicalsecuritynumber" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_interest"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -87,7 +87,7 @@
             app:layout_constraintStart_toStartOf="@+id/et_name"
             app:layout_constraintTop_toBottomOf="@+id/et_city" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_email"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -97,7 +97,7 @@
             app:layout_constraintStart_toStartOf="@+id/et_name"
             app:layout_constraintTop_toBottomOf="@+id/et_interest" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_phonenumber"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -107,7 +107,7 @@
             app:layout_constraintStart_toStartOf="@+id/et_name"
             app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_description"
             android:layout_width="300dp"
             android:layout_height="wrap_content"

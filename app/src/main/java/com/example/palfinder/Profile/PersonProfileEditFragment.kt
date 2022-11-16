@@ -64,6 +64,13 @@ class PersonProfileEditFragment : Fragment() {
         val updateButton = view.findViewById<Button>(R.id.button_register)
 
         updateButton.setOnClickListener {
+          /*  //On Button-click send user to another fragment
+            val personProfileViewFragment = PersonProfileViewFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, personProfileViewFragment, "findThisFragment")
+                .addToBackStack(null)
+                .commit()
+           */
 
             val person = Person(
                 et_name.text.toString(),

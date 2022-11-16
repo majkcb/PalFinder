@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
+import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -26,6 +28,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,8 +37,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth //authentication
     lateinit var emailView: EditText
     lateinit var passwordView: EditText
+
+    lateinit var facebookButton: Button
     lateinit var loginButton: LoginButton
     var callbackManager = CallbackManager.Factory.create()
+
     lateinit var googleSignInClient: GoogleSignInClient
     lateinit var googleSignIn: SignInButton
 
@@ -81,8 +87,13 @@ class MainActivity : AppCompatActivity() {
         // facebook-inloggning nedan
 
         loginButton = findViewById(R.id.loginFacebook)
+
+       // facebookButton = findViewById(R.id.fb_button)
+
         callbackManager = CallbackManager.Factory.create()
 
+        // facebookLogin()
+        
         fbLogIn()
 
         //Google inlogg nedan
@@ -152,9 +163,30 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun fbLogIn() {
-        loginButton.setPermissions(listOf("email"))
+  /*  private fun facebookLogin(){
+        facebookButton.setPermissions(listOf("email"))
+            facebookButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
+                override fun onCancel() {
+                    // App code
+                }
 
+                override fun onError(exception: FacebookException) {
+                    // App code
+                }
+
+                override fun onSuccess(result: LoginResult?) {
+
+                    Log.d("!!!", "Login Success")
+                }
+            })
+        }
+
+   */
+
+
+
+    private fun fbLogIn() {
+       loginButton.setPermissions(listOf("email"))
         loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
             @JvmName("onSuccess1")
             fun onSuccess(loginResult: LoginResult) {
@@ -173,10 +205,10 @@ class MainActivity : AppCompatActivity() {
 
                 Log.d("!!!", "Login Success")
 
-
             }
         })
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode, resultCode, data)

@@ -22,16 +22,17 @@ class PersonProfileViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_person_profile_view, container, false)
-/*
+
         val editButton = view.findViewById<Button>(R.id.editButton)
         editButton.setOnClickListener {
-            val personProfileEditFragment : PersonProfileEditFragment
-            val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, personProfileEditFragment)
-            transaction.commit()
+            val personProfileEditFragment = PersonProfileEditFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, personProfileEditFragment, "findThisFragment")
+                .addToBackStack(null)
+                .commit()
         }
 
-        FirebaseFirestore
+       /* FirebaseFirestore
             .getInstance()
             .collection("users")
             .addSnapshotListener(activity) {
@@ -42,12 +43,9 @@ class PersonProfileViewFragment : Fragment() {
                 if (value != null){
 
                 }
-            }
-      */
+            }  */
+
         return view
     }
-
-    companion object {
-
-    }
+    
 }
