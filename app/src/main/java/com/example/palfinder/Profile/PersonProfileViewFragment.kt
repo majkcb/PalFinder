@@ -30,6 +30,7 @@ class PersonProfileViewFragment : Fragment() {
                 .replace(R.id.fragment_container, personProfileEditFragment, "findThisFragment")
                 .addToBackStack(null)
                 .commit()
+
         }
 
        /* FirebaseFirestore
