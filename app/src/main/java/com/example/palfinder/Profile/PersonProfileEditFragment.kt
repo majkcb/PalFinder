@@ -74,7 +74,7 @@ class PersonProfileEditFragment : Fragment() {
 
             val person = Person(
                 et_name.text.toString(),
-                et_socialsecuritynumber.text.toString().toIntOrNull(),
+                et_socialsecuritynumber.text.toString().toLongOrNull(),
                 et_city.text.toString(),
                 et_phonenumber.text.toString(),
                 et_email.text.toString(),
