@@ -82,8 +82,8 @@ class AllUsersRecyclerViewFragment : Fragment() {
             if (text != null) {
                 Log.d("!!!", "person:  $person , interest: ${person.interests}")
 
-                if (person.interests != null) {
-                    if (person.interests!!.lowercase().contains(text.lowercase())) {
+                if (person.interests != null || person.city != null) {
+                    if (person.interests!!.lowercase().contains(text.lowercase()) || (person.city!!.lowercase().contains(text.lowercase())) ) {
                         filteredList.add(person)
                     }
                 }
