@@ -1,4 +1,4 @@
-package com.example.palfinder.Profile
+package com.example.palfinder.PersonProfileFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.palfinder.Person
+import com.example.palfinder.Person.Person
 import com.example.palfinder.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase

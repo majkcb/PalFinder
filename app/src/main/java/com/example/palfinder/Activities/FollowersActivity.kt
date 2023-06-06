@@ -1,4 +1,4 @@
-package com.example.palfinder
+package com.example.palfinder.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

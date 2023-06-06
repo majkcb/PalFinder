@@ -1,14 +1,12 @@
-package com.example.palfinder
+package com.example.palfinder.Activities
 
 import android.os.Bundle
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.palfinder.Fragments.*
-import com.example.palfinder.Profile.PersonProfileEditFragment
-import com.example.palfinder.Profile.PersonProfileRegisterFragment
-import com.example.palfinder.Profile.PersonProfileViewFragment
+import com.example.palfinder.PersonProfileFragments.PersonProfileEditFragment
+import com.example.palfinder.PersonProfileFragments.PersonProfileViewFragment
+import com.example.palfinder.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MenuActivity : AppCompatActivity() {
@@ -37,19 +35,11 @@ class MenuActivity : AppCompatActivity() {
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-
                 R.id.map -> replaceFragment(mapViewFragment)
-
                 R.id.profile -> replaceFragment(personProfileViewFragment)
-
                 R.id.allUsers -> replaceFragment(allUsersRecyclerViewFragment)
-
                 R.id.followers -> replaceFragment(followersRecyclerViewFragment)
-
                 R.id.following -> replaceFragment(followingRecyclerViewFragment)
-
-                //R.id.settings -> replaceFragment(allUsersRecyclerViewFragment)
-
             }
             true
         }

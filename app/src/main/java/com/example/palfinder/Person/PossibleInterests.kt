@@ -1,4 +1,4 @@
-package com.example.palfinder
+package com.example.palfinder.Person
 
 enum class PossibleInterests ( val interest : Int) {
     GOLF(1),

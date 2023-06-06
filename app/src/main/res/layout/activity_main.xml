@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <ImageView
         android:id="@+id/palfinderLogo"
@@ -79,22 +79,6 @@
         app:layout_constraintStart_toEndOf="@+id/signUpButton"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
-
-    <Button
-        android:id="@+id/fb_button"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="3dp"
-        android:backgroundTint="#3B5998"
-        android:drawableLeft="@drawable/facebook"
-        android:text="Sign In"
-        android:textAlignment="textEnd"
-        android:textAllCaps="false"
-        android:textColor="#CECECE"
-        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
