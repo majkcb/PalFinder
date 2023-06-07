@@ -52,16 +52,16 @@ class MainActivity : AppCompatActivity() {
         emailView = findViewById(R.id.emailEditText)
         passwordView = findViewById(R.id.passwordEditText)
 
-        val showHideBtn = findViewById<Button>(R.id.hideShowBtn)
+        val showHidePassword = findViewById<Button>(R.id.hideShowBtn)
 
-        showHideBtn.setOnClickListener {
-            if (showHideBtn.text.toString().equals("Show")) {
+        showHidePassword.setOnClickListener {
+            if (showHidePassword.text.toString().equals("Show")) {
                 passwordView.transformationMethod =
                     HideReturnsTransformationMethod.getInstance()
-                showHideBtn.text = "Hide"
+                showHidePassword.text = "Hide"
             } else {
                 passwordView.transformationMethod = PasswordTransformationMethod.getInstance()
-                showHideBtn.text = "Show"
+                showHidePassword.text = "Show"
             }
         }
 

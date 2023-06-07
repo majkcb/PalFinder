@@ -1,4 +1,4 @@
-package com.example.palfinder.RecyclerViews
+package com.example.palfinder.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +41,7 @@ class RecyclerViewFollowersAdapter(val persons : List<Person>)
         val followersPhoneNumber = itemView.findViewById<TextView>(R.id.followers_phoneNumber)!!
         val followersInterests = itemView.findViewById<TextView>(R.id.followers_interests)!!
         val followersDescription = itemView.findViewById<TextView>(R.id.followers_description)!!
+
 
         init {
             itemView.setOnClickListener {

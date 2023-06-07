@@ -1,4 +1,4 @@
-package com.example.palfinder.RecyclerViews
+package com.example.palfinder.adapters
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.example.palfinder.Person.PersonOldClass
 import com.example.palfinder.Person.PossibleInterests
 import com.example.palfinder.R
 
-class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+class RecyclerViewFollowingAdapter(val persons : List<Person>)
     : RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

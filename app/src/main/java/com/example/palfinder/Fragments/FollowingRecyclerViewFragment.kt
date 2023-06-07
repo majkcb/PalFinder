@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.palfinder.Person.Person
 import com.example.palfinder.R
-import com.example.palfinder.RecyclerViews.RecyclerViewFollowingAdapter
+import com.example.palfinder.adapters.RecyclerViewFollowingAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase

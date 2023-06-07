@@ -37,12 +37,7 @@ class PersonProfileRegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-      /*  //Profile Pic.
-        val editButton = view.findViewById<Button>(R.id.edit_button)
-        editButton.setOnClickListener(){
-            intentCamera()
-        }
-      */
+
 
         et_name = view.findViewById(R.id.et_name)
         et_socialsecuritynumber = view.findViewById(R.id.et_soicalsecuritynumber)

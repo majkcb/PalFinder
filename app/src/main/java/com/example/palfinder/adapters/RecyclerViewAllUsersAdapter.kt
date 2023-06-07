@@ -1,4 +1,4 @@
-package com.example.palfinder.RecyclerViews
+package com.example.palfinder.adapters
 
 import android.util.Log
 import android.view.LayoutInflater

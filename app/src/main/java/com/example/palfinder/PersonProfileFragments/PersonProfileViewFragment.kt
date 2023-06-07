@@ -1,12 +1,15 @@
 package com.example.palfinder.PersonProfileFragments
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.palfinder.R
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class PersonProfileViewFragment : Fragment() {
@@ -27,18 +30,20 @@ class PersonProfileViewFragment : Fragment() {
 
         }
 
-       /* FirebaseFirestore
-            .getInstance()
-            .collection("users")
-            .addSnapshotListener(activity) {
-                value, e ->
-                if (e != null) {
-                    Log.w(TAG, "failed to listen for updates")
-                }
-                if (value != null){
+        activity?.let {
+            FirebaseFirestore
+                .getInstance()
+                .collection("users")
+                .addSnapshotListener(it) {
+                    value, e ->
+                    if (e != null) {
+                        Log.w(TAG, "failed to listen for updates")
+                    }
+                    if (value != null){
 
+                    }
                 }
-            }  */
+        }
 
         return view
     }
