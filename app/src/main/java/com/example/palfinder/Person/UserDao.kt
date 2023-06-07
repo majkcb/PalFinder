@@ -1,4 +1,4 @@
-package com.example.palfinder.Profile
+package com.example.palfinder.Person
 
 class UserDao {
 

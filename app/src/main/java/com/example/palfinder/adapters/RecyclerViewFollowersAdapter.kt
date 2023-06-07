@@ -1,17 +1,18 @@
-package com.example.palfinder
+package com.example.palfinder.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.palfinder.Person.Person
+import com.example.palfinder.R
 
-class RecyclerViewFollowersAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+class RecyclerViewFollowersAdapter(val persons : List<Person>)
     : RecyclerView.Adapter<RecyclerViewFollowersAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewFollowersAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val followersRecyclerRow = LayoutInflater.from(parent.context).inflate(R.layout.followers_card_layout, parent, false)
         return ViewHolder(followersRecyclerRow)
     }
@@ -40,20 +41,12 @@ class RecyclerViewFollowersAdapter(val persons : List<Person>/*, val clickListen
         val followersPhoneNumber = itemView.findViewById<TextView>(R.id.followers_phoneNumber)!!
         val followersInterests = itemView.findViewById<TextView>(R.id.followers_interests)!!
         val followersDescription = itemView.findViewById<TextView>(R.id.followers_description)!!
-        //val followersEmailAddress = itemView.findViewById<TextView>(R.id.)
+
 
         init {
             itemView.setOnClickListener {
                 val position: Int = absoluteAdapterPosition
-                // Toast.makeText(itemView.context, "you clicked on ${persons[position].name}", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-    /*fun printInterests(person:PersonOldClass, interest:PossibleInterests, interests: PossibleInterests){
-        for (interest in person.interests) {
-            Log.d("Interest","${interest}")
-        }
-    }*/
-
 }

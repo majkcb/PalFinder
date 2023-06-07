@@ -1,4 +1,4 @@
-package com.example.palfinder
+package com.example.palfinder.Activities
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.example.palfinder.R
 import com.example.palfinder.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -62,12 +63,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val mapFragment = supportFragmentManager
                     .findFragmentById(R.id.map) as SupportMapFragment
                 mapFragment.getMapAsync(this)
-
-
             }
         }
-
-
     }
 
     override fun onRequestPermissionsResult(

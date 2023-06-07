@@ -1,8 +1,8 @@
-package com.example.palfinder
+package com.example.palfinder.Person
 
 import android.widget.EditText
 
-class PersonOldClass (var photo : Int, var name: String, var city : String, var phoneNumber: String/*, var interests: MutableList<PossibleInterests>*/) {
+class PersonOldClass (var photo : Int, var name: String, var city : String, var phoneNumber: String) {
 
 
     var interests = mutableListOf<PossibleInterests>()
@@ -37,16 +37,6 @@ class PersonOldClass (var photo : Int, var name: String, var city : String, var 
         description = text
     }
 
-   /*fun addInterest(interest: PossibleInterests){
-        interests.add(interest)
-    }
-
-    fun removeInterest(interest: PossibleInterests){
-        interests.remove(interest)
-    }
-
-    */
-
     fun addfollower(follower: PersonOldClass){
         followersList.add(follower)
     }
@@ -62,11 +52,5 @@ class PersonOldClass (var photo : Int, var name: String, var city : String, var 
     fun removefollows(follows: PersonOldClass){
         followingList.remove(follows)
     }
-
-    /*  fun editPhoto (photo:Int) {
-        this.photo = photo
-    }   */
-
-    //var geographicPositionCurrent: MapPosition?????
 
 }

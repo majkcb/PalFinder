@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.palfinder.*
+import com.example.palfinder.Person.Person
+import com.example.palfinder.adapters.RecyclerViewAllUsersAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -101,11 +103,6 @@ class AllUsersRecyclerViewFragment : Fragment() {
     }
 
 }
-
-
-private fun buildDisplayData() {
-
-    }
 
 
 

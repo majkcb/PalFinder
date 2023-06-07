@@ -1,4 +1,4 @@
-package com.example.palfinder
+package com.example.palfinder.adapters
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,11 +7,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.palfinder.Person.Person
+import com.example.palfinder.Person.PersonOldClass
+import com.example.palfinder.Person.PossibleInterests
+import com.example.palfinder.R
 
-class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListener: ClickListener*/)
+class RecyclerViewFollowingAdapter(val persons : List<Person>)
     : RecyclerView.Adapter<RecyclerViewFollowingAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewFollowingAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val followsRecyclerRow = LayoutInflater.from(parent.context).inflate(R.layout.following_card_layout, parent, false)
         return ViewHolder(followsRecyclerRow)
     }
@@ -50,7 +54,7 @@ class RecyclerViewFollowingAdapter(val persons : List<Person>/*, val clickListen
         }
     }
 
-    fun printInterests(person:PersonOldClass, interest:PossibleInterests, interests: PossibleInterests){
+    fun printInterests(person: PersonOldClass, interest: PossibleInterests, interests: PossibleInterests){
         for (interest in person.interests) {
             Log.d("Interest","${interest}")
         }

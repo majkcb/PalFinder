@@ -22,8 +22,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile_icon"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="88dp"
+            android:layout_height="80dp"
             android:layout_margin="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +59,8 @@
 
         <EditText
             android:id="@+id/et_name"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_width="153dp"
+            android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:hint="Name"
             app:layout_constraintEnd_toEndOf="parent"
@@ -120,8 +120,8 @@
 
         <EditText
             android:id="@+id/et_description"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="298dp"
+            android:layout_height="65dp"
             android:gravity="start|top"
             android:hint="Write a few words about yourself"
             android:inputType="textMultiLine"

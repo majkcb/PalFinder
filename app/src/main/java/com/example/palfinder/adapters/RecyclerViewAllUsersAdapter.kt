@@ -1,4 +1,4 @@
-package com.example.palfinder
+package com.example.palfinder.adapters
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.palfinder.Person.Person
+import com.example.palfinder.Person.PersonOldClass
+import com.example.palfinder.Person.PossibleInterests
+import com.example.palfinder.R
 
-open class RecyclerViewAllUsersAdapter(var persons : List<Person>/*, val clickListener: ClickListener*/)
+open class RecyclerViewAllUsersAdapter(var persons : List<Person>)
     : RecyclerView.Adapter<RecyclerViewAllUsersAdapter.ViewHolder>() {
 
      fun setFilteredList(filteredList: List<Person>) {
@@ -20,7 +24,7 @@ open class RecyclerViewAllUsersAdapter(var persons : List<Person>/*, val clickLi
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RecyclerViewAllUsersAdapter.ViewHolder {
+    ): ViewHolder {
         val allUsersRecyclerRow = LayoutInflater.from(parent.context)
             .inflate(R.layout.all_users_card_layout, parent, false)
         return ViewHolder(allUsersRecyclerRow)
@@ -54,7 +58,6 @@ open class RecyclerViewAllUsersAdapter(var persons : List<Person>/*, val clickLi
         init {
             itemView.setOnClickListener {
                 val position: Int = absoluteAdapterPosition
-                // Toast.makeText(itemView.context, "you clicked on ${persons[position].name}", Toast.LENGTH_SHORT).show()
             }
         }
     }

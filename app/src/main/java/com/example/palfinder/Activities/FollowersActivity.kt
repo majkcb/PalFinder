@@ -1,13 +1,15 @@
-package com.example.palfinder
+package com.example.palfinder.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.palfinder.R
+import com.example.palfinder.adapters.RecyclerViewFollowersAdapter
 
 class FollowersActivity : AppCompatActivity() {
 
-    /*private var layoutManager: RecyclerView.LayoutManager? = null
+    private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerViewFollowersAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +22,9 @@ class FollowersActivity : AppCompatActivity() {
 
         recyclerViewFollowers.layoutManager = layoutManager
 
-        adapter = RecyclerViewFollowersAdapter()
+
         recyclerViewFollowers.adapter = adapter
     }
 
-     */
+
 }

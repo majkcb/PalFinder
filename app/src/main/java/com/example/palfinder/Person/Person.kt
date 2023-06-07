@@ -1,4 +1,4 @@
-package com.example.palfinder
+package com.example.palfinder.Person
 
 class Person(var name: String? = null,
              var socialSecurityNumber : Long? = null,

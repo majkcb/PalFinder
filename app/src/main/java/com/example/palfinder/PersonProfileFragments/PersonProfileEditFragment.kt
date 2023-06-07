@@ -1,4 +1,4 @@
-package com.example.palfinder.Profile
+package com.example.palfinder.PersonProfileFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.palfinder.Person
+import androidx.fragment.app.FragmentTransaction
+import com.example.palfinder.Person.Person
 import com.example.palfinder.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -31,7 +32,7 @@ class PersonProfileEditFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-     /*   val view = inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
+        val view = inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
         val updateButton = view.findViewById<Button>(R.id.button_register)
 
         updateButton.setOnClickListener {
@@ -40,7 +41,7 @@ class PersonProfileEditFragment : Fragment() {
             transaction.replace(R.id.fragment_container, personProfileViewFragment)
             transaction.commit()
         }
-*/
+
 
         return inflater.inflate(R.layout.fragment_person_profile_edit, container, false)
 
@@ -64,13 +65,13 @@ class PersonProfileEditFragment : Fragment() {
         val updateButton = view.findViewById<Button>(R.id.button_register)
 
         updateButton.setOnClickListener {
-          /*  //On Button-click send user to another fragment
+            //On Button-click send user to another fragment
             val personProfileViewFragment = PersonProfileViewFragment()
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, personProfileViewFragment, "findThisFragment")
                 .addToBackStack(null)
                 .commit()
-           */
+
 
             val person = Person(
                 et_name.text.toString(),
