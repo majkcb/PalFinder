@@ -40,7 +40,4 @@ class MapViewFragment : Fragment() {
 
         return view
     }
-
-
-
 }

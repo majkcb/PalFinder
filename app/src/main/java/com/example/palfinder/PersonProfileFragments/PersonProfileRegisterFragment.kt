@@ -77,29 +77,5 @@ class PersonProfileRegisterFragment : Fragment() {
 
         }
 
-    /* companion object{
-        const val REQUEST_CAMERA = 180
-    }
-
-    private fun intentCamera() {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{ intent ->
-            activity?.packageManager?.let {
-                intent.resolveActivity(it).also {
-                    startActivityForResult(intent, REQUEST_CAMERA)
-                }
-            }
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == REQUEST_CAMERA && resultCode == RESULT_OK){
-            val impBitmap = data?.extras?.get("data") as Bitmap
-            uploadImage(imgBitmap)
-        }
-    }
-
-     */
-
 
 }

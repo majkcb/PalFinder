@@ -21,9 +21,6 @@ class FollowingRecyclerViewFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
     }
 
     override fun onCreateView(
@@ -61,17 +58,3 @@ class FollowingRecyclerViewFragment : Fragment() {
 
     }
 }
-
-/* //Test RV_button down here
-val followersButton = findViewById<Button>(R.id.followersButton)
-followersButton.setOnClickListener {
-    val intent = Intent(this, FollowersActivity::class.java)
-    startActivity(intent)
-}
-//xml fil
-<Button
-            android:id="@+id/followersButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Followers" />
-*/
